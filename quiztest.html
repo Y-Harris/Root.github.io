@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Security CTF Questions</title>
+</head>
+<body>
+
+<form>
+    <p>1. What is the primary purpose of input validation and data sanitization in web applications?</p>
+    <label><input type="radio" name="q1" value="a"> a) To optimize database queries for better performance.</label><br>
+    <label><input type="radio" name="q1" value="b"> b) To prevent malicious scripts from being injected.</label><br>
+    <label><input type="radio" name="q1" value="c"> c) To increase the speed of data transmission.</label><br>
+    <label><input type="radio" name="q1" value="d"> d) To enhance user experience by allowing all input.</label><br>
+    
+    <p>2. Which of the following security vulnerabilities can be mitigated by implementing Content Security Policy (CSP)?</p>
+    <label><input type="radio" name="q2" value="a"> a) Cross-Site Scripting (XSS)</label><br>
+    <label><input type="radio" name="q2" value="b"> b) Cross-Site Request Forgery (CSRF)</label><br>
+    <label><input type="radio" name="q2" value="c"> c) SQL Injection</label><br>
+    <label><input type="radio" name="q2" value="d"> d) Insecure Direct Object References</label><br>
+    
+    <p>3. What technique should you use to prevent SQL injection vulnerabilities in your web application?</p>
+    <label><input type="radio" name="q3" value="a"> a) Use weak passwords for database access.</label><br>
+    <label><input type="radio" name="q3" value="b"> b) Implement parameterized queries or prepared statements.</label><br>
+    <label><input type="radio" name="q3" value="c"> c) Disable all user input fields in your application.</label><br>
+    <label><input type="radio" name="q3" value="d"> d) Store SQL queries in plain text files.</label><br>
+    
+    <p>4. What is the purpose of Cross-Site Request Forgery (CSRF) tokens in web security?</p>
+    <label><input type="radio" name="q4" value="a"> a) To allow malicious scripts to execute on a user's browser.</label><br>
+    <label><input type="radio" name="q4" value="b"> b) To prevent users from accessing a web application.</label><br>
+    <label><input type="radio" name="q4" value="c"> c) To verify that requests originated from the application itself.</label><br>
+    <label><input type="radio" name="q4" value="d"> d) To authenticate users without requiring passwords.</label><br>
+    
+    <p>5. Which security practice involves setting proper session timeouts and implementing session rotation?</p>
+    <label><input type="radio" name="q5" value="a"> a) Cross-Site Scripting (XSS)</label><br>
+    <label><input type="radio" name="q5" value="b"> b) Cross-Site Request Forgery (CSRF)</label><br>
+    <label><input type="radio" name="q5" value="c"> c) Session Management</label><br>
+    <label><input type="radio" name="q5" value="d"> d) Input Validation</label><br>
+    
+    <br>
+    
+</form>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Security CTF Questions</title>
+    <script>
+        function checkAnswers() {
+            var correctAnswers = ["b", "a", "b", "c", "c"];
+            var userAnswers = [];
+
+            for (var i = 1; i <= 5; i++) {
+                var selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+                if (selectedOption) {
+                    userAnswers.push(selectedOption.value);
+                } else {
+                    userAnswers.push(""); // Placeholder for unanswered questions
+                }
+            }
+
+            var allCorrect = true;
+
+            for (var i = 0; i < correctAnswers.length; i++) {
+                if (userAnswers[i] !== correctAnswers[i]) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+
+            if (allCorrect) {
+                alert("Congratulations! All answers are correct.Flag{BLESSBETHAL}");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<form>
+    <!-- ... (same HTML code for questions and options) ... -->
+
+    <br>
+    <input type="button" value="Submit Answers" onclick="checkAnswers()">
+</form>
+
+</body>
+</html>
